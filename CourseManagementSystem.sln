@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CourseManagementSystem", "CourseManagementSystem\", "{BE0EBA92-0064-46A2-9400-E58C2527FABD}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50525"
+		Debug.AspNetCompiler.PhysicalPath = "CourseManagementSystem\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50525\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50525"
+		Release.AspNetCompiler.PhysicalPath = "CourseManagementSystem\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50525\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50525"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE0EBA92-0064-46A2-9400-E58C2527FABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE0EBA92-0064-46A2-9400-E58C2527FABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19299F82-120B-47DC-8455-9E72155F8F97}
+	EndGlobalSection
+EndGlobal
