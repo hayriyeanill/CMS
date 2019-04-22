@@ -135,8 +135,8 @@ input[type=text]:focus {
 
 
         .auto-style4 {
-            left: 370px;
-            top: 72px;
+            left: 473px;
+            top: 93px;
             margin-top: 0px;
         }
 
