@@ -16,11 +16,11 @@ public partial class _Default : System.Web.UI.Page
             string connectionString;
             SqlConnection cnn;
 
-            connectionString = @"Data Source=(localdb)\CMS; Initial Catalog=CMS"; // Database'i kendi bilgilerine göre değiştir.
+            connectionString = @"Data Source=(localdb)\CMS; Initial Catalog=CMS"; 
             cnn = new SqlConnection(connectionString);
 
             cnn.Open();
-            Response.Write("asdasdasdads");
+            Response.Write("db baglandi");
             cnn.Close();
         }
         catch (Exception ex)
