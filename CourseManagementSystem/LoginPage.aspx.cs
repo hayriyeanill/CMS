@@ -39,7 +39,7 @@ public partial class _Default : System.Web.UI.Page
         {
             try {
             sqlConn.Open();
-            string query = "SELECT COUNT(1) FROM deneme WHERE user_id=@userid AND password=@password";
+            string query = "SELECT COUNT(1) FROM USERS WHERE user_id=@userid AND password=@password";
             SqlCommand sqlCom = new SqlCommand(query, sqlConn);
 
             sqlCom.Parameters.AddWithValue("@userid", txtUserID.Text.Trim());
