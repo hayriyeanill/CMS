@@ -162,10 +162,12 @@ input[type=text]:focus {
                     <asp:Label ID="lblUserId" runat="server" Text="User ID:"></asp:Label>
                 </td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="txtUserID" runat="server" TextMode="SingleLine" Width="150px"></asp:TextBox>
+                    <asp:TextBox ID="txtUserID" runat="server" Width="150px" MaxLength="7"></asp:TextBox>
                 </td>
                 <td class="auto-style3">
-                    <asp:RequiredFieldValidator ID="Rfv_userID" runat="server" ControlToValidate="txtUserID" ErrorMessage="Please Enter Your User ID"></asp:RequiredFieldValidator>
+                    <p>
+                        <asp:RegularExpressionValidator ID="regexUserID" runat="server" ControlToValidate="txtUserID" ErrorMessage="Please enter a valid User ID." ForeColor="Red" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
+                    </p>
                 </td>
             </tr>
             <tr>
@@ -173,10 +175,10 @@ input[type=text]:focus {
                     <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
                 </td>
                 <td class="auto-style10">
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="150px" MaxLength="8"></asp:TextBox>
                 </td>
                 <td class="auto-style13">
-                    <asp:RequiredFieldValidator ID="Rfv_password" runat="server" ControlToValidate="txtPassword" ErrorMessage="Please Enter Your Password"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Please enter a valid password." ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -186,7 +188,7 @@ input[type=text]:focus {
                     <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Log In" Height="53px" />
                 </td>
                 <td class="auto-style7">
-                    <asp:Label ID="lblErrorMessage" runat="server">Invalid Name or Password</asp:Label>
+                    <asp:Label ID="lblErrorMessage" runat="server" ForeColor="Red">Invalid Name or Password</asp:Label>
                 </td>
             </tr>
         </table>

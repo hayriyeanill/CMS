@@ -13,24 +13,6 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         lblErrorMessage.Visible = false;
-       
-        /*try
-        {
-           string connectionString;
-            SqlConnection cnn;
-
-            connectionString = @"Data Source=(localdb)\CMS; Initial Catalog=CMS"; 
-            cnn = new SqlConnection(connectionString);
-
-            cnn.Open();
-            Response.Write("db baglandi");
-            cnn.Close();
-        }
-        catch (Exception ex)
-        {
-            Response.Write("error" + ex.ToString());
-        }
-        */
     }
 
     protected void btnLogin_Click(object sender, EventArgs e)
