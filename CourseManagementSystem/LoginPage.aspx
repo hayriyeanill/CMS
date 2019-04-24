@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LoginPage.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -186,7 +186,7 @@ input[type=text]:focus {
                     <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Log In" Height="53px" />
                 </td>
                 <td class="auto-style7">
-                    <asp:Label ID="Label1" runat="server"></asp:Label>
+                    <asp:Label ID="lblErrorMessage" runat="server">Invalid Name or Password</asp:Label>
                 </td>
             </tr>
         </table>
