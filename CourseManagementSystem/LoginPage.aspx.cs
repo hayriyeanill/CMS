@@ -47,3 +47,4 @@ public partial class _Default : System.Web.UI.Page
     }
 }
 
+// logout butonunda session.abandon kullanmayi unutma
