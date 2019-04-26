@@ -31,7 +31,7 @@ public partial class _Default : System.Web.UI.Page
                 if (count == 1)
                 {
                     Session["userid"] = txtUserID.Text.Trim(); // kullaniciyi bilmek icin
-                    Response.Redirect("HomePage.aspx?userID=" + txtUserID.Text.Trim());
+                    Response.Redirect("HomePage.aspx?userID=" + Session["userid"]);
                 }
                 else
                 {
@@ -43,22 +43,7 @@ public partial class _Default : System.Web.UI.Page
             {
                 Response.Write("error" + ex.ToString());
             }
-        }
-
-
-                /* string userId = txtUserID.Text;
-                 string password = txtPassword.Text;
-                 * if (txtUserID.Text == "12345" && txtPassword.Text == "123")
-                 {
-                     Response.Redirect("Default2.aspx?userID=" + userId);
-                 }
-                 else
-                 {
-                    lblError message visible olur
-                 }
-                 */
-          
-           
+        } 
     }
 }
 
