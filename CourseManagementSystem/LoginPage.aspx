@@ -1,202 +1,86 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LoginPage.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Course Management System Login</title>
-    <style>
-html {
-  background-color: #56baed;
-
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
-}
-a {
-  color: #92badd;
-  display:inline-block;
-  text-decoration: none;
-  font-weight: 400;
-}
-
-h2 {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  display:inline-block;
-  margin: 40px 8px 10px 8px; 
-  color: #cccccc;
-}
-#formContent {
-  -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
-  background: #fff;
-  padding: 30px;
-  width: 90%;
-  max-width: 450px;
-  position: relative;
-  padding: 0px;
-  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  text-align: center;
-}
-
-h2.inactive {
-  color: #cccccc;
-}
-
-h2.active {
-  color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
-}
-
-input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
-  border: none;
-  color: white;
-  padding: 15px 80px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 13px;
-  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-  margin: 5px 20px 40px 20px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
- 
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-input[type=text]:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
-}
-
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-        .auto-style1 {
-            left: 105px;
-            top: 15px;
-        }
-        .auto-style2 {
-            left: 430px;
-            top: 120px;
-        }
-        .auto-style3 {
-            height: 100px;
-        }
-
-
-
-
-
-        .auto-style4 {
-            left: 515px;
-            top: 110px;
-            margin-top: 0px;
-        }
-
-
-
-
-
-    </style>
+ <title>CMS</title>
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"/>
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"/>
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<!--===============================================================================================-->
 </head>
-<body style="margin-right: 0">
-    <div class="wrapper fadeInDown">
-    <div id="formContent" class="auto-style4">
-         <!-- Icon -->
-    <form id="form1" runat="server">
-         
-  <div class="fadeIn first">
-       &nbsp;<asp:Image ID="imgCMS" runat="server" ImageUrl="~/cms1.png" Width="70px" />
-    </div>
-         
-        <table class="auto-style5">
-            <tr>
-                <td class="auto-style3">
-                    <asp:Label ID="lblUserId" runat="server" Text="User ID:"></asp:Label>
-                </td>
-                <td class="auto-style3">
-                    <asp:TextBox ID="txtUserID" runat="server" Width="150px" MaxLength="7"></asp:TextBox>
-                </td>
-                <td class="auto-style3">
-                    <p>
-                        <asp:RegularExpressionValidator ID="regexUserID" runat="server" ControlToValidate="txtUserID" ErrorMessage="Please enter a valid User ID." ForeColor="Red" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style15">
-                    <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
-                </td>
-                <td class="auto-style10">
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="150px" MaxLength="8"></asp:TextBox>
-                </td>
-                <td class="auto-style13">
-                    <asp:RequiredFieldValidator ID="rfPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Please enter a valid password." ForeColor="Red"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style1">
-                    &nbsp;</td>
-                <td class="auto-style2">
-                    <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Log In" Height="53px" />
-                </td>
-                <td class="auto-style7">
-                    <asp:Label ID="lblErrorMessage" runat="server" ForeColor="Red">Invalid Name or Password</asp:Label>
-                </td>
-            </tr>
-        </table>
-            
-    </form>
-         &nbsp;</div>
-             </div>
-  
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form"  id="form1" runat ="server">
+					<span class="login100-form-title p-b-48">
+						<asp:Image ID="imgCMS" runat="server" ImageUrl="~/cms1.png" Width="100px" />
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Please enter a valid UserID.">
+						<asp:TextBox ID="txtUserID" class="input100" TextMode="SingleLine" runat="server" MaxLength="8"></asp:TextBox>
+						<span class="focus-input100" data-placeholder="UserID"></span>
+					</div>
+					<!--=========================userid======================================================================-->
+					<div class="wrap-input100 validate-input" data-validate="Please enter a valid password.">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<asp:TextBox ID="txtPassword" class="input100" TextMode="Password" runat="server" MaxLength="8"></asp:TextBox>
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+					<!--=========================pass======================================================================-->
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<asp:Button ID="btnLogin" style="background-color:#25AAE1"  class="login100-form-btn" runat="server" Text="Login" OnClick="btnLogin_Click1" />
+						</div>
+						<asp:Label ID="lblErrorMessage" runat="server" Style="color:red" Text="UserID or password is wrong." Font-Bold="True" Font-Size="Small"></asp:Label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<input id="Text1" type="text" />
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 </body>
 </html>

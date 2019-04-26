@@ -15,19 +15,22 @@ public partial class _Default : System.Web.UI.Page
         lblErrorMessage.Visible = false;
     }
 
-    protected void btnLogin_Click(object sender, EventArgs e)
+
+    protected void btnLogin_Click1(object sender, EventArgs e)
     {
+        //sayi disi veri kontrolu lazim
         using (SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;"))
         {
-            try {
-            sqlConn.Open();
-            string query = "SELECT COUNT(1) FROM USERS WHERE user_id=@userid AND password=@password";
-            SqlCommand sqlCom = new SqlCommand(query, sqlConn);
+            try
+            {
+                sqlConn.Open();
+                string query = "SELECT COUNT(1) FROM USERS WHERE user_id=@userid AND password=@password";
+                SqlCommand sqlCom = new SqlCommand(query, sqlConn);
 
-            sqlCom.Parameters.AddWithValue("@userid", txtUserID.Text.Trim());
-            sqlCom.Parameters.AddWithValue("@password", txtPassword.Text.Trim());
+                sqlCom.Parameters.AddWithValue("@userid", txtUserID.Text.Trim());
+                sqlCom.Parameters.AddWithValue("@password", txtPassword.Text.Trim());
 
-            int count = Convert.ToInt32(sqlCom.ExecuteScalar()); // 1 gelmesi gerekiyor diger turlu kullanici yok demektir.
+                int count = Convert.ToInt32(sqlCom.ExecuteScalar()); // 1 gelmesi gerekiyor diger turlu kullanici yok demektir.
                 if (count == 1)
                 {
                     Session["userid"] = txtUserID.Text.Trim(); // kullaniciyi bilmek icin
@@ -43,7 +46,7 @@ public partial class _Default : System.Web.UI.Page
             {
                 Response.Write("error" + ex.ToString());
             }
-        } 
+        }
     }
 }
 
