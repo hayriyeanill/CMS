@@ -22,7 +22,12 @@
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
      
+            <asp:Label ID="Label1" runat="server"></asp:Label>
+        
+     
         </asp:ContentPlaceHolder>
+             <asp:BulletedList ID="BulletedList1" runat="server">
+             </asp:BulletedList>
     </div>
     </form>
          
