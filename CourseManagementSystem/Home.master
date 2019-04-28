@@ -55,7 +55,7 @@
                         <a href="program.html">Courses</a>
                         <ul class="dropdown arrow-top">
                           <li><a href="program.html">SEN1001</a></li>
-                          <li><a href="program.html">SEN2022</a></li>
+                          <li><a href="CoursePage.aspx">SEN2022</a></li>
                           <li><a href="program.html">MAT1052</a></li>
                         </ul>
                       </li>

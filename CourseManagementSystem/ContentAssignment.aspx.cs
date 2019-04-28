@@ -41,17 +41,6 @@ public partial class ContentAssignment : System.Web.UI.Page
         //sqlConn.Close();
         //sqlConn.Close();
 
-
-
-
-
-
-
-
-
-
-
-
     }
 
     protected void btnSend_Click(object sender, EventArgs e)
