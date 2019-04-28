@@ -7,7 +7,7 @@
     
   
     <asp:Label ID="Label1" runat="server" Visible="False"></asp:Label>
-    <asp:BulletedList ID="BulletedList1" runat="server" Height="66px" Width="417px">
+    <asp:BulletedList ID="BulletedList1" runat="server" Height="66px" Width="417px" DisplayMode="HyperLink">
     </asp:BulletedList>
 </asp:Content>
 
