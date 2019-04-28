@@ -48,7 +48,11 @@ a {
   position: relative;
   -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-  background: #fff; }
+  background: #fff;
+    top: 0px;
+    left: 0px;
+    height: 874px;
+}
   .site-wrap:before {
     -webkit-transition: .3s all ease-in-out;
     -o-transition: .3s all ease-in-out;
