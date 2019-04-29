@@ -12,7 +12,6 @@ public partial class Home : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       // Response.Write(Session["userid"]);
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();
 
@@ -34,13 +33,12 @@ public partial class Home : System.Web.UI.MasterPage
 
         for (int i = 0; i <courses.Count; i++) //location.count
         {
-            sb.Append("<li><a href= \"CoursePage.aspx\">" +courses[i] + "</a></li>");
-            // <li><a href="CoursePage.aspx"> SEN2022 </a></li>
-            //session burda ayarlaman lazim
+
+            // <li><a href="HomePage.aspx?userID=1234567/course=SEN2022"> SEN2022 </a></li> yapip kursta redirecti bu adrese ettiririz
+            sb.Append("<li><a href= \"HomePage.aspx?userID=" + Session["userid"] + "/course=" + courses[i] + "\">" +courses[i] + "</a></li>");
+
         }
-
         sb.Append("</ul>");
-
         litMarkup.Text = sb.ToString();
 
         dr.Close();
