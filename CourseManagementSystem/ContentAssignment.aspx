@@ -10,14 +10,42 @@
         .auto-style2 {
             width: 64%;
         }
+        .auto-style3 {
+            width: 32%;
+            height: 76px;
+            margin-left: 21px;
+        }
+        .auto-style4 {
+            width: 32%;
+        }
+        .auto-style5 {
+            width: 102%;
+            height: 76px;
+            margin-left: 21px;
+        }
+        .auto-style6 {
+            width: 102%;
+        }
+        .auto-style7 {
+            width: 32%;
+            height: 43px;
+        }
+        .auto-style8 {
+            width: 102%;
+            height: 43px;
+        }
+        .auto-style9 {
+            width: 64%;
+            height: 43px;
+        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table class="style1">
         <tr>
-            <td class="auto-style1">
+            <td class="auto-style3">
                 Choose Course</td>
-            <td class="auto-style1">
+            <td class="auto-style5">
                 <asp:DropDownList ID="ddlCourse" runat="server" DataSourceID="SqlDataSource2" 
                     DataTextField="COURSE_ID" DataValueField="COURSE_ID">
                 </asp:DropDownList>
@@ -30,9 +58,9 @@
                 </td>
         </tr>
         <tr>
-            <td>
+            <td class="auto-style4">
                 Choose Assignment</td>
-            <td>
+            <td class="auto-style6">
                 <asp:DropDownList ID="ddlAssignment" runat="server" DataSourceID="SqlDataSource1" 
                     DataTextField="ASSIGNMENT_NO" DataValueField="ASSIGNMENT_NO">
                 </asp:DropDownList>
@@ -45,18 +73,19 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
-                Content</td>
-            <td>
+            <td class="auto-style7">
+                <asp:Button ID="btnContent" runat="server" OnClick="btnContent_Click" Text="See Assignment" />
+            </td>
+            <td class="auto-style8">
                 <asp:Label ID="lblContent" runat="server"></asp:Label>
             </td>
-            <td class="auto-style2">
-                &nbsp;</td>
+            <td class="auto-style9">
+                </td>
         </tr>
         <tr>
-            <td>
+            <td class="auto-style4">
                 Answer Here</td>
-            <td>
+            <td class="auto-style6">
                 <asp:TextBox ID="txtAnswer" runat="server" Height="63px" TextMode="MultiLine" 
                     Width="231px"></asp:TextBox>
             </td>
@@ -66,11 +95,10 @@
  
         
         <tr>
-            <td class="style2">
+            <td class="auto-style4">
                 <asp:Literal ID="ltrlMessage" runat="server"></asp:Literal>
-                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:CMSConnectionString %>" SelectCommand="SELECT * FROM [ANSWERS]"></asp:SqlDataSource>
             </td>
-            <td class="style2">
+            <td class="auto-style6">
                 <asp:Button ID="btnSend" runat="server" Text="Send" OnClick="btnSend_Click" />
             </td>
             <td class="auto-style2">

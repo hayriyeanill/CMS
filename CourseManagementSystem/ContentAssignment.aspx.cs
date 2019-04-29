@@ -18,30 +18,41 @@ public partial class ContentAssignment : System.Web.UI.Page
     {
         txtAssignment.Text = ddlAssignment.SelectedItem.Text;
         txtAssignment.Enabled = false;
+
+    }
+    protected void btnContent_Click(object sender, EventArgs e)
+    {
+        SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
+
+
+        string query = "SELECT CONTENT FROM ASSIGNMENTS where COURSE_ID='" + txtCourse.Text + "' and ASSIGNMENT_NO='" + txtAssignment.Text + "'";
+        SqlCommand sqlCom = new SqlCommand(query, sqlConn);
+        SqlDataReader sdr;
+        sqlConn.Open();
+
+        //sqlCom.Parameters.AddWithValue("@courseid", txtCourse.Text.Trim());
+        //sqlCom.Parameters.AddWithValue("@assignmentno", txtAssignment.Text.Trim());
+        //sqlCom.Parameters.AddWithValue("@content", lblContent.Text.Trim());
+
+        sdr = sqlCom.ExecuteReader();
+
+        while (sdr.Read())
+        {
+            // lblContent.Text = sqlCom.ExecuteScalar().ToString();
+            lblContent.Text = sdr["CONTENT"].ToString();
+
+        }
+        sqlConn.Close();
+
+
     }
     protected void Page_Load(object sender, EventArgs e)
     {
-        //SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
-        //sqlConn.Open();
-        //string query = "SELECT COURSE_ID,ASSIGNMENT_NO,CONTENT FROM ASSIGNMENTS where course_id=@courseid and assignment_no=@assignmentno";
-        // SqlCommand sqlCom = new SqlCommand(query, sqlConn);
-        //sqlCom.Parameters.AddWithValue("@courseid", txtCourse.Text.Trim());
-        //sqlCom.Parameters.AddWithValue("@assignmentno", txtAssignment.Text.Trim());
-        //int count = Convert.ToInt32(sqlCom.ExecuteScalar());
         
-        //SqlDataReader dr;
-        //dr = sqlCom.ExecuteReader();
-        //while (dr.Read())
-        //{
-
-        //    lblContent.Text = dr["CONTENT"].ToString(); 
-
-        //}
-        //dr.Close();
-        //sqlConn.Close();
-        //sqlConn.Close();
 
     }
+
+
 
     protected void btnSend_Click(object sender, EventArgs e)
     {
@@ -59,4 +70,8 @@ public partial class ContentAssignment : System.Web.UI.Page
         sqlCom.ExecuteNonQuery();
         sqlConn.Close();
     }
+
+
+
+   
 }
