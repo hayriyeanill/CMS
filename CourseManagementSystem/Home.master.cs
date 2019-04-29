@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -11,19 +12,29 @@ public partial class Home : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+       // Response.Write(Session["userid"]);
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();
 
-        List<string> locations;  // buna ekle kurslari
+        string query = "SELECT STUDENTS.COURSE_ID FROM STUDENTS WHERE STUDENTS.USER_ID =" + Session["userid"];
+        SqlCommand sqlCom = new SqlCommand(query, sqlConn);
+
+        SqlDataReader dr;
+        dr = sqlCom.ExecuteReader(); // tablodan istedigimiz bilgileri cekiyoruz
+
+        List<string> courses = new List<string>();
+        while (dr.Read())
+        {
+            courses.Add(dr["COURSE_ID"].ToString());
+        }
 
         StringBuilder sb = new StringBuilder();
 
         sb.Append("<ul class=\"dropdown arrow - top\">");
 
-        for (int i = 0; i < locations.Count; i++)
+        for (int i = 0; i <courses.Count; i++) //location.count
         {
-            sb.Append("<li><a href= \"CoursePage.aspx\">" + "Deneme" + "</a></li>");
+            sb.Append("<li><a href= \"CoursePage.aspx\">" +courses[i] + "</a></li>");
             // <li><a href="CoursePage.aspx"> SEN2022 </a></li>
             //session burda ayarlaman lazim
         }
@@ -31,5 +42,8 @@ public partial class Home : System.Web.UI.MasterPage
         sb.Append("</ul>");
 
         litMarkup.Text = sb.ToString();
+
+        dr.Close();
+        sqlConn.Close();
     }
 }
