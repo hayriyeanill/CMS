@@ -12,7 +12,7 @@ public partial class AssignmentPage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["COURSE_ID"]
+        //Session["COURSE_ID"]
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();
          string query = "SELECT ASSIGNMENT_NO FROM ASSIGNMENTS WHERE COURSE_ID='SEN3304'";
