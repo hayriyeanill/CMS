@@ -1,5 +1,6 @@
-﻿<%@ Master Language="VB" CodeFile="Home.master.vb" Inherits="Home" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Home.master.cs" Inherits="Home" %>
 
+<!DOCTYPE html>
 <!DOCTYPE html>
 
 <html>
@@ -51,13 +52,9 @@
                     <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                         <li><a href="homePage.aspx">HOME</a></li>
-                        <li class="has-children"> 
+                        <li class="has-children"> S
                         <a href="program.html">Courses</a>
-                        <ul class="dropdown arrow-top">
-                          <li><a href="program.html">SEN1001</a></li>
-                          <li><a href="CoursePage.aspx">SEN2022</a></li>
-                          <li><a href="program.html">MAT1052</a></li>
-                        </ul>
+                       <asp:Literal ID="litMarkup" runat="server"></asp:Literal>              
                       </li>
                       <li><a href="events.html">SIGN OUT</a></li>
                     </ul>
