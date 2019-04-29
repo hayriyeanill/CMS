@@ -32,13 +32,13 @@
          
             </td>
             <td class="menu" >
-                <asp:HyperLink ID="hlAssignments" runat="server" NavigateUrl="~/Assignments.aspx">Assigments</asp:HyperLink>
+                <asp:HyperLink ID="hlAssignments" runat="server" NavigateUrl="~/AssignmentPage.aspx">Assigments</asp:HyperLink>
                 <br />
                 <br />
                 <asp:HyperLink ID="hlGrades" runat="server" NavigateUrl="~/Assignments.aspx">Grades</asp:HyperLink>
                 <br />
                 <br />
-                <asp:HyperLink ID="hlResources" runat="server" NavigateUrl="~/Assignments.aspx">Resources</asp:HyperLink>
+                <asp:HyperLink ID="hlResources" runat="server" NavigateUrl="~/ResourcesPage.aspx">Resources</asp:HyperLink>
             </td>
            
         </tr>
