@@ -15,7 +15,7 @@ public partial class Home : System.Web.UI.MasterPage
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();
 
-        string query = "SELECT STUDENTS.COURSE_ID FROM STUDENTS WHERE STUDENTS.USER_ID =" + Session["userid"];
+        string query = "SELECT STUDENTS.COURSE_ID FROM STUDENTS WHERE STUDENTS.USER_ID ='" + Session["userid"] + "'";
         SqlCommand sqlCom = new SqlCommand(query, sqlConn);
 
         SqlDataReader dr;

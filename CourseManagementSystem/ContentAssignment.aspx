@@ -1,45 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ContentAssignment.aspx.cs" Inherits="ContentAssignment" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <style type="text/css">
-        .auto-style1 {
-            width: 64%;
-            height: 76px;
-            margin-left: 21px;
-        }
-        .auto-style2 {
-            width: 64%;
-        }
-        .auto-style3 {
-            width: 32%;
-            height: 76px;
-            margin-left: 21px;
-        }
-        .auto-style4 {
-            width: 32%;
-        }
-        .auto-style5 {
-            width: 102%;
-            height: 76px;
-            margin-left: 21px;
-        }
-        .auto-style6 {
-            width: 102%;
-        }
-        .auto-style7 {
-            width: 32%;
-            height: 43px;
-        }
-        .auto-style8 {
-            width: 102%;
-            height: 43px;
-        }
-        .auto-style9 {
-            width: 64%;
-            height: 43px;
-        }
-        </style>
-</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table class="style1">
         <tr>
