@@ -34,14 +34,21 @@ public partial class Home : System.Web.UI.MasterPage
         for (int i = 0; i <courses.Count; i++) //location.count
         {
 
-            // <li><a href="HomePage.aspx?userID=1234567/course=SEN2022"> SEN2022 </a></li> yapip kursta redirecti bu adrese ettiririz
-            sb.Append("<li><a href= \"HomePage.aspx?userID=" + Session["userid"] + "/course=" + courses[i] + "\">" +courses[i] + "</a></li>");
-
+            //sb.Append("<li><a onserverclick=\"logout_Click\" href= \"CoursePage.aspx?courses=" + courses[i] + "\" >" + courses[i] + "</a></li>");
+            // sb.Append("<li> <asp:HtmlAnchor OnServerClick = \"Course_Click\" text=\"deneme\" /></li>");
+            //sb.Append("<li><a onserverclick=\"logout_Click\" href= \"CoursePage.aspx?courses=" + courses[i] + "\" >" + courses[i] + "</a></li>");
         }
         sb.Append("</ul>");
         litMarkup.Text = sb.ToString();
 
+
         dr.Close();
         sqlConn.Close();
     }
+
+    protected void logout_Click(object sender, EventArgs e)
+    {
+        Response.Write("deneme");
+    }
+
 }
