@@ -25,7 +25,7 @@ public partial class ContentAssignment : System.Web.UI.Page
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
 
 
-        string query = "SELECT CONTENT FROM ASSIGNMENTS where COURSE_ID='" + txtCourse.Text + "' and ASSIGNMENT_NO='" + txtAssignment.Text + "'";
+        string query = "SELECT CONTENT_A FROM ASSIGNMENTS where COURSE_ID='" + txtCourse.Text + "' and ASSIGNMENT_NO='" + txtAssignment.Text + "'";
         SqlCommand sqlCom = new SqlCommand(query, sqlConn);
         SqlDataReader sdr;
         sqlConn.Open();
@@ -39,7 +39,7 @@ public partial class ContentAssignment : System.Web.UI.Page
         while (sdr.Read())
         {
             // lblContent.Text = sqlCom.ExecuteScalar().ToString();
-            lblContent.Text = sdr["CONTENT"].ToString();
+            lblContent.Text = sdr["CONTENT_A"].ToString();
 
         }
         sqlConn.Close();
