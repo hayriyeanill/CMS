@@ -13,7 +13,7 @@ public partial class ResourcesPage : System.Web.UI.Page
 
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();
-        string query = "SELECT COURSE_ID, COURSE_INSTRUCTOR, RESOURCE FROM RESOURCES";
+        string query = "SELECT STUDENTS.USER_ID, STUDENTS.COURSE_ID, COURSES.COURSE_INSTRUCTOR, RESOURCES.RESOURCE FROM STUDENTS, COURSES, RESOURCES WHERE STUDENTS.COURSE_ID = COURSES.COURSE_ID AND COURSES.COURSE_ID = RESOURCES.COURSE_ID AND COURSES.COURSE_ID = '" + Session["courses"] + "' AND STUDENTS.USER_ID ='"+ Session["userid"] +"'";
         SqlCommand sqlCom = new SqlCommand(query, sqlConn);
 
         SqlDataReader dr;
@@ -21,11 +21,10 @@ public partial class ResourcesPage : System.Web.UI.Page
 
         while (dr.Read())
         {
-            Label1.Text = dr["COURSE_INSTRUCTOR"].ToString() + " added " + dr["RESOURCE"] + " in " + dr["COURSE_ID"];
+            Label1.Text = dr["COURSE_INSTRUCTOR"].ToString() + " added " + dr["RESOURCE"].ToString() + " in " + dr["COURSE_ID"].ToString();
             BulletedList2.Items.Add(Label1.Text);
         }
 
-        BulletedList2.Items.Add(Label1.Text);
         dr.Close();
         sqlConn.Close();
     }

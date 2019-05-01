@@ -33,9 +33,6 @@ public partial class ContentAssignment : System.Web.UI.Page
         sqlConn.Close();
 
     }
-
-
-
     protected void btnSend_Click(object sender, EventArgs e)
     {
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
