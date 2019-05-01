@@ -29,26 +29,22 @@ public partial class Home : System.Web.UI.MasterPage
 
         StringBuilder sb = new StringBuilder();
 
-        sb.Append("<ul class=\"dropdown arrow - top\">");
+        sb.Append("<ul class=\"dropdown arrow-top\">");
 
         for (int i = 0; i <courses.Count; i++) //location.count
         {
 
-            //sb.Append("<li><a onserverclick=\"logout_Click\" href= \"CoursePage.aspx?courses=" + courses[i] + "\" >" + courses[i] + "</a></li>");
-            // sb.Append("<li> <asp:HtmlAnchor OnServerClick = \"Course_Click\" text=\"deneme\" /></li>");
+            sb.Append("<li><a href= \"CoursePage.aspx?courses=" + courses[i] + "\" >" + courses[i] + "</a></li>");
+            //sb.Append("<li><a href= \"HomePage.aspx?userID=" + Session["userid"] + "/course=" + courses[i] + "\">" + courses[i] + "</a></li>");
             //sb.Append("<li><a onserverclick=\"logout_Click\" href= \"CoursePage.aspx?courses=" + courses[i] + "\" >" + courses[i] + "</a></li>");
         }
         sb.Append("</ul>");
         litMarkup.Text = sb.ToString();
 
-
         dr.Close();
         sqlConn.Close();
     }
 
-    protected void logout_Click(object sender, EventArgs e)
-    {
-        Response.Write("deneme");
-    }
+
 
 }

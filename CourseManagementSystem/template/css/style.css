@@ -43,12 +43,12 @@ a {
   line-height: 1; }
 
 .site-wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-  background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
     top: 0px;
     left: 0px;
     height: 874px;
@@ -159,7 +159,7 @@ a {
     .site-footer a:hover {
       color: #fff; }
   .site-footer ul li {
-    margin-bottom: 2px; }
+    margin-bottom: 10px; }
 
 .bg-text-line {
   display: inline;
@@ -169,7 +169,7 @@ a {
 
 .bg-image {
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-rpeeat;
   overflow: hidden;
   background-position: center center; }
   .bg-image.center {
