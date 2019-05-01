@@ -60,7 +60,7 @@ public partial class CoursePage : System.Web.UI.Page
 
         while (dr3.Read())
         {
-            Label3.Text = dr3["EXAM"].ToString() + " result added in " + dr3["COURSE_ID"];
+            Label3.Text = dr3["EXAM"].ToString() + " result added in " + dr3["COURSE_ID"].ToString();
              BulletedList2.Items.Add(Label3.Text);
         }
         dr3.Close();
