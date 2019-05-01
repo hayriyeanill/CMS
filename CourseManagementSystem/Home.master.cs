@@ -43,8 +43,8 @@ public partial class Home : System.Web.UI.MasterPage
 
         dr.Close();
         sqlConn.Close();
-    }
 
+    }
 
 
 }

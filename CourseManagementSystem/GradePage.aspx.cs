@@ -13,14 +13,12 @@ public partial class GradePage : System.Web.UI.Page
     {
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();
-        string query = "SELECT EXAM, GRADE FROM GRADES WHERE USER_ID='1234567' AND COURSE_ID='MAT3012'";
+        string query = "SELECT EXAM, GRADE FROM GRADES WHERE USER_ID='" + Session["userid"] + "' AND COURSE_ID='"+ Session["courses"] +"'";
         SqlDataAdapter sqlD = new SqlDataAdapter(query, sqlConn);
         DataTable dtb1 = new DataTable();
         sqlD.Fill(dtb1);
         GridView1.DataSource = dtb1;
         GridView1.DataBind();
-
-
 
         sqlConn.Close();
     }

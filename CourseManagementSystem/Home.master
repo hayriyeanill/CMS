@@ -56,7 +56,7 @@
                         <a href="homePage.aspx">Courses</a>
                        <asp:Literal ID="litMarkup" runat="server"></asp:Literal> <!-- alt menu burada -->        
                       </li>
-                      <li><a href="events.html">SIGN OUT</a></li>
+                      <li><a href="LoginPage.aspx">SIGN OUT</a></li>
                     </ul>
                   </div>
                 </nav>
