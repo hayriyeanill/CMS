@@ -38,7 +38,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Please enter a valid UserID.">
-						<asp:TextBox ID="txtUserID" class="input100" TextMode="SingleLine" runat="server" MaxLength="8"></asp:TextBox>
+						<asp:TextBox ID="txtUserID" class="input100" TextMode="SingleLine" runat="server" MaxLength="7"></asp:TextBox>
 						<span class="focus-input100" data-placeholder="UserID"></span>
 					</div>
 					<!--=========================userid======================================================================-->
