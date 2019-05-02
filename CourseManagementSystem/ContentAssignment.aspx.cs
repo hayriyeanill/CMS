@@ -12,7 +12,15 @@ public partial class ContentAssignment : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string asgNo = Request.QueryString["assignmentNo"];
-        Session["assignmentNo"] = asgNo;
+        if (Session["assignmentNo"] == null)
+        {
+            Session.Add("assignmentNo", asgNo);
+        }
+        else
+        {
+            Session["assignmentNo"] = asgNo;
+        }
+       
         // Response.Write(Session["assignmentNo"]);
 
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");

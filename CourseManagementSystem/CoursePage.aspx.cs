@@ -11,8 +11,15 @@ public partial class CoursePage : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string courses = Request.QueryString["courses"];
-        Session["courses"] = courses;
-
+        if (Session["courses"] == null)
+        {
+            Session.Add("name", courses);
+        }
+        else
+        {
+            Session["name"] = courses;
+        }
+       
         // Assignments query
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();

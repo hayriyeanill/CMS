@@ -12,7 +12,15 @@ public partial class HomePage :  System.Web.UI.Page
     {
         
         string userid = Request.QueryString["userid"];
-        Session["userid"] = userid;
+        if (Session["userid"] == null)
+        {
+            Session.Add("userid", userid);
+        }
+        else
+        {
+            Session["userid"] = userid;
+        }
+
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();
         string query = "SELECT STUDENTS.USER_ID, RESOURCES.COURSE_ID, RESOURCES.COURSE_INSTRUCTOR, RESOURCES.RESOURCE FROM STUDENTS, RESOURCES WHERE STUDENTS.COURSE_ID = RESOURCES.COURSE_ID  AND STUDENTS.USER_ID ='" + Session["userid"] + "'";
