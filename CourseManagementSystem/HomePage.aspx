@@ -8,17 +8,24 @@
         li{
             list-style-type:none;
         }
+        .auto-style2 {
+            height: 74px;
+            width: 222px;
+        }
+        .auto-style3 {
+            width: 222px;
+        }
     </style>
    
     <table class="w-100">
         <tr>
-            <td style="width: 311px">&nbsp;</td>
+            <td class="auto-style3">&nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 311px">&nbsp;</td>
+            <td class="auto-style3">&nbsp;</td>
             <td>
 
                     <asp:BulletedList ID="BulletedList1" runat="server" style="margin-bottom: 3px;">
@@ -34,7 +41,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="height: 74px; width: 311px;"></td>
+            <td class="auto-style2"></td>
             <td style="height: 74px">&nbsp;</td>
             <td style="height: 74px"></td>
         </tr>
