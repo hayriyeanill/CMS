@@ -12,8 +12,14 @@ public partial class Home : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        string userid = Request.QueryString["userid"];
+        Session["userid"] = userid;
+       
+
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();
+
 
         string query = "SELECT STUDENTS.COURSE_ID FROM STUDENTS WHERE STUDENTS.USER_ID ='" + Session["userid"] + "'";
         SqlCommand sqlCom = new SqlCommand(query, sqlConn);
@@ -28,13 +34,16 @@ public partial class Home : System.Web.UI.MasterPage
         }
 
         StringBuilder sb = new StringBuilder();
+        StringBuilder home = new StringBuilder();
+
+        home.Append("<li><a href=\"HomePage.aspx?userid=" +Session["userid"] + "\">Home</a></li>");
+        litHome.Text = home.ToString();
 
         sb.Append("<ul class=\"dropdown arrow-top\">");
 
         for (int i = 0; i <courses.Count; i++) //location.count
         {
-
-            sb.Append("<li><a href= \"CoursePage.aspx?courses=" + courses[i] + "\" >" + courses[i] + "</a></li>");
+            sb.Append("<li><a href= \"CoursePage.aspx?userid=" +Session["userid"] + "&courses=" + courses[i] + "\" >" + courses[i] + "</a></li>");
             //sb.Append("<li><a href= \"HomePage.aspx?userID=" + Session["userid"] + "/course=" + courses[i] + "\">" + courses[i] + "</a></li>");
             //sb.Append("<li><a onserverclick=\"logout_Click\" href= \"CoursePage.aspx?courses=" + courses[i] + "\" >" + courses[i] + "</a></li>");
         }

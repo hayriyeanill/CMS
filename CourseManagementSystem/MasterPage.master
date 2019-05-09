@@ -14,14 +14,9 @@
    
          
             </td>
-            <td class="menu" >
-                <asp:HyperLink ID="hlAssignments" runat="server" NavigateUrl="~/AssignmentPage.aspx">Assigments</asp:HyperLink>
-                <br />
-                <br />
-                <asp:HyperLink ID="hlGrades" runat="server" NavigateUrl="~/GradePage.aspx">Grades</asp:HyperLink>
-                <br />
-                <br />
-                <asp:HyperLink ID="hlResources" runat="server" NavigateUrl="~/ResourcesPage.aspx">Resources</asp:HyperLink>
+            <td class="menu">
+                <asp:Literal ID="litMenu" runat="server"></asp:Literal>
+                
             </td>
            
         </tr>

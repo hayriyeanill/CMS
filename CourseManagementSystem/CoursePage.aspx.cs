@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class CoursePage : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
+    protected void Page_Load(object sender, EventArgs e)  
     {
         string courses = Request.QueryString["courses"];
         Session["courses"] = courses;

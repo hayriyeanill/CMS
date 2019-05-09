@@ -26,7 +26,7 @@ public partial class _Default : System.Web.UI.Page
             lblErrorMessage.Visible = true;
             txtUserID.Text = "";
         }
-        else
+        elsehttp://localhost:50525/cms1.png
         {
             using (SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;"))
             {

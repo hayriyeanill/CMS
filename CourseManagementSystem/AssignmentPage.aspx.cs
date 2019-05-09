@@ -28,9 +28,8 @@ public partial class AssignmentPage : System.Web.UI.Page
        
         while (dr.Read())
         {
-         
             Label1.Text = "Assignment " +  dr["ASSIGNMENT_NO"].ToString() + " open";
-            string assignmentNo = "~/ContentAssignment.aspx?assignmentNo=" + dr["ASSIGNMENT_NO"];
+            string assignmentNo = "~/ContentAssignment.aspx?userid="+Session["userid"]+"&courses="+Session["courses"] +"&assignmentNo=" + dr["ASSIGNMENT_NO"];
             ListItem item = new ListItem(Label1.Text, assignmentNo); // duzeltilecek
             BulletedList1.Items.Add(item);
         }
