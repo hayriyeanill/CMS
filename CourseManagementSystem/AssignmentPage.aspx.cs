@@ -16,7 +16,7 @@ public partial class AssignmentPage : System.Web.UI.Page
         //Session["COURSE_ID"]
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();
-         string query = "SELECT ASSIGNMENT_NO FROM ASSIGNMENTS WHERE COURSE_ID='" + Session["courses"] + "'";
+         string query = "SELECT ASSIGNMENT_NO FROM ASSIGNMENT WHERE COURSE_ID='" + Session["courses"] + "'";
        // string query = "SELECT ASSIGNMENT_NO FROM ASSIGNMENTS WHERE COURSE_ID='SEN2212'";
        // string query = "SELECT ASSIGNMENT_NO FROM ASSIGNMENTS WHERE COURSE_ID='SEN3006'";
 

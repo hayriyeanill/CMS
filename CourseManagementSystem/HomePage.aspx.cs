@@ -34,7 +34,7 @@ public partial class HomePage :  System.Web.UI.Page
 
         SqlConnection sqlConn2 = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn2.Open();
-        string query2 = "SELECT STUDENTS.USER_ID, COURSES.COURSE_INSTRUCTOR,COURSES.COURSE_ID, ASSIGNMENTS.ASSIGNMENT_NO FROM STUDENTS, COURSES, ASSIGNMENTS WHERE STUDENTS.COURSE_ID = COURSES.COURSE_ID  AND COURSES.COURSE_ID = ASSIGNMENTS.COURSE_ID AND STUDENTS.USER_ID='" + Session["userid"] + "'";
+        string query2 = "SELECT STUDENTS.USER_ID, COURSES.COURSE_INSTRUCTOR,COURSES.COURSE_ID, ASSIGNMENT.ASSIGNMENT_NO FROM STUDENTS, COURSES, ASSIGNMENT WHERE STUDENTS.COURSE_ID = COURSES.COURSE_ID  AND COURSES.COURSE_ID = ASSIGNMENT.COURSE_ID AND STUDENTS.USER_ID='" + Session["userid"] + "'";
         SqlCommand sqlCom2 = new SqlCommand(query2, sqlConn2);
         SqlDataReader dr2;
         dr2 = sqlCom2.ExecuteReader();

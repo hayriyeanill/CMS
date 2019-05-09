@@ -17,7 +17,7 @@ public partial class CoursePage : System.Web.UI.Page
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
         sqlConn.Open();
 
-        string query = "SELECT COURSES.COURSE_ID, COURSES.COURSE_INSTRUCTOR, ASSIGNMENTS.ASSIGNMENT_NO FROM COURSES, ASSIGNMENTS WHERE COURSES.COURSE_ID = ASSIGNMENTS.COURSE_ID AND COURSES.COURSE_ID='" + Session["courses"] + "' ";
+        string query = "SELECT COURSES.COURSE_ID, COURSES.COURSE_INSTRUCTOR, ASSIGNMENT.ASSIGNMENT_NO FROM COURSES, ASSIGNMENT WHERE COURSES.COURSE_ID = ASSIGNMENT.COURSE_ID AND COURSES.COURSE_ID='" + Session["courses"] + "' ";
         SqlCommand sqlCom = new SqlCommand(query, sqlConn);
         SqlDataReader dr;
         dr = sqlCom.ExecuteReader();

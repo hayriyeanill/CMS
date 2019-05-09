@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table class="style1" style="width: 553px">
         <tr>
-            <td class="auto-style4" style="width: 428px">
+            <td class="auto-style4" style="width: 239px">
                 <asp:Label ID="lblAssignmentNo" runat="server" Text="lblAssigment"></asp:Label>
             </td>
             <td class="auto-style6">
@@ -16,7 +16,7 @@
             <td class="auto-style7" style="height: 239px; width: 428px">
                 Content:</td>
             <td class="auto-style7" style="height: 239px">
-                <asp:Label ID="lblContent" runat="server"></asp:Label>
+                <asp:Literal ID="litContent" runat="server"></asp:Literal>
             </td>
             <td class="auto-style9" style="height: 239px">
                 </td>

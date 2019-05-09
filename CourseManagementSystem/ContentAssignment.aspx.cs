@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,7 +17,7 @@ public partial class ContentAssignment : System.Web.UI.Page
         // Response.Write(Session["assignmentNo"]);
 
         SqlConnection sqlConn = new SqlConnection(@"Data Source=(localdb)\CMS; Initial Catalog=CMS; integrated Security=True;");
-        string query = "SELECT CONTENT_A, ASSIGNMENT_NO FROM ASSIGNMENTS where COURSE_ID='" + Session["courses"] + "' and ASSIGNMENT_NO='" + Session["assignmentNo"] + "'";
+        string query = "SELECT CONTENT_A, ASSIGNMENT_NO FROM ASSIGNMENT where COURSE_ID='" + Session["courses"] + "' and ASSIGNMENT_NO='" + Session["assignmentNo"] + "'";
 
         SqlCommand sqlCom = new SqlCommand(query, sqlConn);
         SqlDataReader sdr;
@@ -24,12 +25,15 @@ public partial class ContentAssignment : System.Web.UI.Page
 
         sdr = sqlCom.ExecuteReader();
 
+        StringBuilder content = new StringBuilder();
+
         while (sdr.Read())
         {
             lblAssignmentNo.Text = "Assignment: " + sdr["ASSIGNMENT_NO"];
-            lblContent.Text = sdr["CONTENT_A"].ToString();
-
+            content.Append("<p>" + sdr["CONTENT_A"].ToString() + "</p>");
         }
+
+        litContent.Text = content.ToString();
         sqlConn.Close();
 
     }

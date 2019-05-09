@@ -1,6 +1,14 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Home.master" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <style> 
+
+        li{
+            list-style-type:none;
+             text-align: left;
+        }
+       
+    </style>
  <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
      <table class="tblGeneral">
         <tr>
@@ -12,13 +20,12 @@
              
     </div>
    
-         
             </td>
             <td class="menu">
-                <asp:Literal ID="litMenu" runat="server"></asp:Literal>
-                
-            </td>
-           
+               
+                <asp:Literal ID="litMenu" runat="server"></asp:Literal>   
+             
+            </td>           
         </tr>
     </table>
 </asp:Content>
