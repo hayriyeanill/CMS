@@ -14,7 +14,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session.Abandon();
+        
         lblErrorMessage.Visible = false;
     }
 
@@ -42,14 +42,7 @@ public partial class _Default : System.Web.UI.Page
                     int count = Convert.ToInt32(sqlCom.ExecuteScalar()); // Count has to be 1 otherwise, user does not exist.
                     if (count == 1)
                     {
-                        if (Session["userid"] == null)
-                        {
-                            Session.Add("userid", txtUserID.Text.Trim());
-                        }
-                        else
-                        {
-                            Session["userid"] = txtUserID.Text.Trim(); // to know which user signed in.
-                        }
+                        Session["userid"] = txtUserID.Text.Trim(); // to know which user signed in.
                         Response.Redirect("HomePage.aspx?userID=" + Session["userid"]);
                     }
                     else
