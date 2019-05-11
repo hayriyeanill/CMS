@@ -67,7 +67,7 @@
       </div>
     </div> <!-- .site-mobile-menu -->
 
-       <div class="site-section">
+       <div class="site-section" style="padding: 2em 0">
       <div class="container">
           <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
           </div>
